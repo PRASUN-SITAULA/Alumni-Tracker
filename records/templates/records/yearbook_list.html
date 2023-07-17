@@ -11,7 +11,9 @@
         <input type="submit" />
     </form>
     <br>
-    {% for student in students %}
+
+    
+        {% for student in students %}
         <article class="media content-section">
           {% if student.recent_passport_size_photo %}
               <div class="float-left article-img">
@@ -82,9 +84,12 @@
           </div>
         {% endspaceless %}
         </article>
-    {%empty%}
+        
+        {%empty%}
         <h3>No results found...</h3>
-    {% endfor %}
+        {% endfor %}
+
+
     {% if is_paginated %}
 
       {% if page_obj.has_previous %}
