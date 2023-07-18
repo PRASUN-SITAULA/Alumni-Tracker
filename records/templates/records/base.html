@@ -90,9 +90,9 @@
 
 
     <main role="main" class="container " style="font-size:15px;" >
-      <div class="row">
-            {% block content_left %}{% endblock %}
-        <div class="col-md-8"><!--div class="col-md-auto"></div-->
+      <div class="row justify-content-center align-self-center">
+          {% block content_left %}{% endblock %}
+        <div class="col-md-8  "><!--div class="col-md-auto"></div-->
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
