@@ -1,11 +1,9 @@
 {% extends "records/base.html" %}
 {% load static %}
 {% block content %}
-    <h2 class="mb-3"><b>Yearbook {{ view.kwargs.program_code }} Batch {{ view.kwargs.batch_bs }}</b></h2>
+    <h2 class="mb-3 mt-10"><b>Yearbook {{ view.kwargs.program_code }} Batch {{ view.kwargs.batch_bs }}</b></h2>
 
     Is your data incomplete or incorrect? You can update your info <a href="{% url 'alumni-login' %}">here</a><br><br>
-
-   
 
     <form class="card card-sm" method="get">
       <div class="card-body row no-gutters align-items-center">
@@ -14,13 +12,11 @@
           </div>
           <!--end of col-->
           <div class="col">
-            
-              <!-- <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords"> -->
+              <input class="form-control form-control-lg form-control-borderless"  type="text" class="input" placeholder="Search By Name" name="name">
           </div>
           <!--end of col-->
           <div class="col-auto">
-            {{ filter_form.name }}
-              <button class="btn btn-lg btn-success" type="submit">Search</button>
+              <button class="btn btn-lg btn-primary btn-custom" type="submit">Search</button>
           </div>
           <!--end of col-->
       </div>

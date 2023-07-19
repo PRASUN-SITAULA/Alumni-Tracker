@@ -96,12 +96,16 @@ a.article-title:hover {
 }
 
 
-  .form-control-borderless {
-      border: none;
-  }
-  
-  .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
-      border: none;
-      outline: none;
-      box-shadow: none;
-  }
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-custom{
+  border-radius: 4px;
+}

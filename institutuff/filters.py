@@ -1,3 +1,4 @@
+from django import forms
 from django.db.models import Q
 from records.models import Student
 from records.models import Address
@@ -12,7 +13,10 @@ class StudentFilter(django_filters.FilterSet):
     program = django_filters.CharFilter(method='check_program', label='program code')
     level = django_filters.CharFilter(method='check_level',label='level')#, choices=PROGRAM_LEVEL_CHOICES)
     country = django_filters.CharFilter(method='check_country',label='country')
-    name = django_filters.CharFilter(method='check_name',label='Name')
+    name = django_filters.CharFilter(method='check_name',label='Name',widget=forms.TextInput(attrs={
+        'type':'text',
+        'class':'input'
+        }))
 
     def check_batch(self, queryset, name, value):
         #raise ValidationError(list(queryset.filter( Q(be_batch_bs=value)|Q(msc_batch_bs=value)|Q(phd_batch_bs=value) )))
