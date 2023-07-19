@@ -27,7 +27,9 @@
 
         <!--Navbar-->
 
-<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" id="topheader" >
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top new-color mb-10" 
+style="background: radial-gradient(circle at 14.2% 27.5%, rgb(104, 199, 255) 0%, rgb(181, 126, 255) 90%);"
+ id="topheader" >
 <div class="container">
     <ul class="navbar-nav ml-auto nav-flex-icons float-left" style="margin-right: 10px">
       <li class="nav-item avatar">
@@ -52,11 +54,9 @@
           <ul class="navbar-nav ml-auto">
 
       <li class="nav-item ml-6">
-        <a class="nav-link btn" href="{% url 'record-home' %}">View Yearbook<span class="sr-only">(current)</span>
+        <a href="{% url 'record-home' %}"><button class="btn-sm btn-primary" style="margin: 10px; padding: 5px; cursor: pointer;">View Yearbook</button><span class="sr-only">(current)</span>
+
         </a>
-
-
-
       {% if object.full_roll_number %}
               <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="userDropDown" data-toggle="dropdown" aria-haspopup="true"
@@ -69,17 +69,27 @@
               <a class="dropdown-item " href="{% url 'student-log-out' %}"><button type="button" class="btn btn-outline-danger waves-effect">Log Out</button></a>
       {% else %}
           </li><li class="nav-item ml-10">
-            <a class="nav-link nav-item btn" href="{% url 'alumni-login' %}">Update Info
+            <a href="{% url 'alumni-login' %}">
+              <button class="btn-sm btn-primary" 
+              style="
+                margin:10px;
+                padding: 5px;
+                cursor: pointer;"
+                >
+                Update Info
+              </button>
+              
+                
+
               <!--<span class="sr-only">(current)</span>-->
             </a>
           </li>
       {% endif %}
-            </div>
+  </div>
           </li>
           </ul>
     <!-- Links -->
-
-  </div>
+</div>
   <!-- Collapsible content -->
     </div>
 </nav>
@@ -89,10 +99,10 @@
 <body >
 
 
-    <main role="main" class="container " style="font-size:15px;" >
-      <div class="row">
-            {% block content_left %}{% endblock %}
-        <div class="col-md-8"><!--div class="col-md-auto"></div-->
+    <main role="main" class="container mt-100" style="font-size:15px;" >
+      <div class="row justify-content-center align-self-center mt-120" style=" margin-top:100px;">
+          {% block content_left %}{% endblock %}
+        <div class="col-md-8 "><!--div class="col-md-auto"></div-->
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
