@@ -54,11 +54,8 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgb(104, 199, 255) 0%,
           <ul class="navbar-nav ml-auto">
 
       <li class="nav-item ml-6">
-        <a class="nav-link btn" href="{% url 'record-home' %}">View Yearbook<span class="sr-only">(current)</span>
+        <a class="nav-link btn" href="{% url 'record-home' %}"><button>View Yearbook</button><span class="sr-only">(current)</span>
         </a>
-
-
-
       {% if object.full_roll_number %}
               <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="userDropDown" data-toggle="dropdown" aria-haspopup="true"
@@ -76,12 +73,11 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgb(104, 199, 255) 0%,
             </a>
           </li>
       {% endif %}
-            </div>
+  </div>
           </li>
           </ul>
     <!-- Links -->
-
-  </div>
+</div>
   <!-- Collapsible content -->
     </div>
 </nav>
