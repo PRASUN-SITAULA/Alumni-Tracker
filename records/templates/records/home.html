@@ -4,12 +4,12 @@
 
 {% block content_left %}
     <div class="col-md-12 d-flex justify-content-center text-center" >
-        <div class="content-section">
+        <div class="content-section border-5" style="border-radius: 10px;">
         <legend class="border-bottom mb-4 mt-2">
             <b style="font-size: 1.5rem; font-weight: 700;">Welcome to the Alumni Portal for DOECE</b>
         </legend>
 
-        <img class="img-fluid w-100" src="{% static 'pictures/department.jpg' %}" >
+        <img class="img-fluid w-100" src="{% static 'pictures/college.png' %}">
         <br><br>
 
         The Department of Electronics and Computer Engineering organized a celebration program to mark the 25th year of BE program in our department.
@@ -37,16 +37,13 @@
             <br>
             <hr>
             <legend class="border-bottom mb-2 mt-2">
-                <b>View/Update your info</b>
+                <b>View/Update your information</b>
             </legend>
-                Do you want to view or update your information?<br>
-                Login below:
+                <!-- Do you want to view or update your information?<br>
+                Login below: -->
             <div style="text-align:center;">
                 <a href="{% url 'alumni-login' %}" class="btn btn-primary">Login</a>
             </div>
         </div>
-            
-        
-        
     </div>
 {% endblock %}

@@ -294,7 +294,7 @@ class YearbookViewForm(forms.Form):
         min_length=4,
         validators=[RegexValidator(r'^\d{1,10}$'),],
         label='Batch (in BS)',
-        help_text='Example- 2055',
+        # help_text='Example- 2055',
         initial='2055',
     )
 
