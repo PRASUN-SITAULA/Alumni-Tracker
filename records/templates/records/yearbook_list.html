@@ -1,6 +1,6 @@
 {% extends "records/base.html" %}
 {% load static %}
-{% block content %}
+{% block content_yearbook %}
     <h2 class="mb-3 mt-10"><b>Yearbook {{ view.kwargs.program_code }} Batch {{ view.kwargs.batch_bs }}</b></h2>
 
     Is your data incomplete or incorrect? You can update your info <a href="{% url 'alumni-login' %}">here</a><br><br>
@@ -128,4 +128,4 @@
       {% endif %}
 
     {% endif %}
-{% endblock content %}
+{% endblock  %}

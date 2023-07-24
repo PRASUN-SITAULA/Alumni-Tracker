@@ -97,11 +97,9 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgb(104, 199, 255) 0%,
 
     </header>
 <body >
-
-
-    <main role="main" class="container mt-100" style="font-size:15px;" >
+    <main role="main" class="container-fluid mt-100" style="font-size:15px;" >
       <div class="row justify-content-center align-self-center mt-120" style=" margin-top:100px;">
-          {% block content_left %}{% endblock %}
+        {% block content_left %}{% endblock %}
         <div class="col-md-8 "><!--div class="col-md-auto"></div-->
             {% if messages %}
                 {% for message in messages %}
@@ -110,7 +108,7 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgb(104, 199, 255) 0%,
                     </div>
                 {% endfor %}
             {% endif %}
-            {% block content %}{% endblock %}
+            {% block content_yearbook %}{% endblock %}
         </div>
         {%block content_twoForms%}{%endblock%}
         <div class="col-md-auto">
@@ -118,6 +116,11 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgb(104, 199, 255) 0%,
         </div>
         <div class="col-md-auto">
           {% block content_twoForms_R %}{% endblock %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center text-center">
+          {% block content %}{% endblock %}
         </div>
       </div>
     <hr>
