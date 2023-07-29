@@ -2,6 +2,7 @@ from django import forms
 from django.db.models import Q
 from records.models import Student
 from records.models import Address
+from records.models import FurtherAcademicStatus
 from records.choices import PROGRAM_LEVEL_CHOICES
 from django.core.exceptions import ValidationError
 from django_countries.fields import CountryField
@@ -17,6 +18,11 @@ class StudentFilter(django_filters.FilterSet):
         'type':'text',
         'class':'input'
         }))
+    currently_employed_organization = django_filters.CharFilter(widget=forms.TextInput(attrs={
+        'type':'text',
+        'class':'input'
+        }))
+    university = django_filters.CharFilter(method='check_university', label="institution")
 
     def check_batch(self, queryset, name, value):
         #raise ValidationError(list(queryset.filter( Q(be_batch_bs=value)|Q(msc_batch_bs=value)|Q(phd_batch_bs=value) )))
@@ -43,6 +49,7 @@ class StudentFilter(django_filters.FilterSet):
                 )
         else : 
             return Student.objects.none()
+        
     #is this check_country efficient?
     def check_country(self, queryset, name, value):
         dict_req = dict(countries)
@@ -51,8 +58,7 @@ class StudentFilter(django_filters.FilterSet):
             code=list(dict_req.keys())[dict_values.index(value.lower())]
         except ValueError:
             return Student.objects.none()
-
-        qset=Address.objects.filter( id__in = queryset.values('has_addresses__id') )\
+        qset=Address.objects.filter(id__in = queryset.values('has_addresses__id') )\
                                 .filter(country__iexact=code).select_related('student')
         if not qset.exists():
             return Student.objects.none()
@@ -73,7 +79,6 @@ class StudentFilter(django_filters.FilterSet):
         #aali sochya vanda badhi complex huna pugyo yo function chai :{
         name_words = str(value).split()
         len_name_words = len(name_words)
-
         #len_name_words will never be zero
 
         #(F,M)1,L,(FM)2,FL,ML,FML
@@ -107,11 +112,17 @@ class StudentFilter(django_filters.FilterSet):
                 #FML
                 query = query | \
                             ( Q(first_name__iexact=first) & Q(middle_name__iexact=middle) & self.Q_check_list_in_field(last_name_possibly_L) )#Q(last_name__icontains=last_name_possibly)  )
-
+            return queryset.filter(query)
+    
         #print(query)
-        return queryset.filter(query)
-
+    def check_university(self, queryset,name,value):
+        qset = FurtherAcademicStatus.objects.filter(id__in = queryset.values('has_further_academic_statuses__id') )\
+                            .filter(institution__iexact=value).select_related('student')
+        list_stndt = [a.student.id for a in qset]
+        return(Student.objects.filter(id__in = list_stndt))
+    
 
     class Meta:
         model=Student
         fields=['batch','program']
+

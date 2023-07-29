@@ -5,16 +5,17 @@
 
     Is your data incomplete or incorrect? You can update your info <a href="{% url 'alumni-login' %}">here</a><br><br>
 
-    <form class="card card-sm" method="get">
+  <form class="card card-sm" method="get">
       <div class="card-body row no-gutters align-items-center">
           <div class="col-auto">
               <i class="fas fa-search h4 text-body"></i>
           </div>
           <!--end of col-->
           <div class="col">
-              <input class="form-control form-control-lg form-control-borderless"  type="text" class="input" placeholder="Search By Name" name="name">
-          </div>
+              <!-- <input class="form-control form-control-lg form-control-borderless"  type="text" class="input" placeholder="Search By Name" name="currently_employed_organization">  -->
+              {{filter_form.name}}
           <!--end of col-->
+          </div>
           <div class="col-auto">
               <button class="btn btn-lg btn-primary btn-custom" type="submit">Search</button>
           </div>
