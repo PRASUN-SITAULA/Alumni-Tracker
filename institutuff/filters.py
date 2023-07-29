@@ -18,11 +18,11 @@ class StudentFilter(django_filters.FilterSet):
         'type':'text',
         'class':'input'
         }))
-    currently_employed_organization = django_filters.CharFilter(widget=forms.TextInput(attrs={
+    currently_employed_organization = django_filters.CharFilter(lookup_expr='icontains',widget=forms.TextInput(attrs={
         'type':'text',
         'class':'input'
         }))
-    university = django_filters.CharFilter(method='check_university', label="institution")
+    university = django_filters.CharFilter(method='check_university', label="institution",lookup_expr='icontains')
 
     def check_batch(self, queryset, name, value):
         #raise ValidationError(list(queryset.filter( Q(be_batch_bs=value)|Q(msc_batch_bs=value)|Q(phd_batch_bs=value) )))
