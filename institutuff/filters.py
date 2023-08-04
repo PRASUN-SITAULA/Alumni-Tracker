@@ -119,7 +119,7 @@ class StudentFilter(django_filters.FilterSet):
                 #FML
                 query = query | \
                             ( Q(first_name__iexact=first) & Q(middle_name__iexact=middle) & self.Q_check_list_in_field(last_name_possibly_L) )#Q(last_name__icontains=last_name_possibly)  )
-            return queryset.filter(query)
+        return queryset.filter(query)
     
         #print(query)
     def check_university(self, queryset,name,value):
