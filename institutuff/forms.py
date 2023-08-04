@@ -8,20 +8,20 @@ from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 
 class LoginForm(forms.Form):
-    last_name = forms.CharField(
-    	widget = forms.TextInput(),
-        max_length=50,
-        label='Last Name',
-    )
+    # last_name = forms.CharField(
+    # 	widget = forms.TextInput(),
+    #     max_length=50,
+    #     label='Last Name',
+    # )
     #position_in_institution = forms.CharField(
     #    widget = forms.TextInput(),
     #    max_length=100
     #)
-    id_code = forms.CharField(
-    	widget = forms.TextInput(),
-        max_length=15,
-        label='id_code',
-    )
+    # id_code = forms.CharField(
+    # 	widget = forms.TextInput(),
+    #     max_length=15,
+    #     label='id_code',
+    # )
     userName = forms.CharField(
         widget = forms.TextInput(),
         min_length = 5,
@@ -42,8 +42,8 @@ class LoginForm(forms.Form):
         self.helper.field_class = 'col-md-9'
         self.helper.layout = Layout(
             Div(
-		        Field('last_name'),
-                Field('id_code'),
+		        # Field('last_name'),
+                # Field('id_code'),
                 Field('userName'),
                 Field('password'),
                 HTML('<br><div style="text-align:center;">'),
@@ -58,14 +58,15 @@ class LoginForm(forms.Form):
 
     def is_valid(self):
         try:
-            last_name = self.data.get('last_name')
-            id_code = self.data.get('id_code')
+            # last_name = self.data.get('last_name')
+            # id_code = self.data.get('id_code')
             userName = self.data.get('userName')
             #pos_in_inst = self.data.get('position_in_institution')
             try:
                 user = User.objects.get(username=userName)
                 if Institute.objects.filter(
-                    Q(last_name__iexact = last_name, id_code = id_code, userName =user)    
+                    # Q(last_name__iexact = last_name, id_code = id_code, userName =user)    
+                    Q( userName =user)    
                 ).exists():
                     return True
             except ObjectDoesNotExist:

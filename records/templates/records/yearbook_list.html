@@ -5,22 +5,67 @@
 
     Is your data incomplete or incorrect? You can update your info <a href="{% url 'alumni-login' %}">here</a><br><br>
 
-    <form class="card card-sm" method="get">
-      <div class="card-body row no-gutters align-items-center">
-          <div class="col-auto">
-              <i class="fas fa-search h4 text-body"></i>
-          </div>
-          <!--end of col-->
-          <div class="col">
-              <input class="form-control form-control-lg form-control-borderless"  type="text" class="input" placeholder="Search By Name" name="name">
-          </div>
-          <!--end of col-->
-          <div class="col-auto">
-              <button class="btn btn-lg btn-primary btn-custom" type="submit">Search</button>
-          </div>
-          <!--end of col-->
+
+<style>
+  .card{
+    background: linear-gradient(#614385, #516395);
+  }
+  .form-row{
+    margin-top: 10px;
+  }
+  .btn{
+    margin-bottom: 10px;
+    background: linear-gradient(#02aab0, #00cdac);
+    color: aliceblue;
+    border-radius: 4px;
+  }
+
+  .form-control{
+    border-bottom: 2px solid rgb(255, 162, 0);
+    
+  }
+</style>
+
+
+<form class="card card-sm" method="get">
+    <div class="card-body form-row no-gutters align-items-center mt-10">
+        <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+        </div>
+        <!--end of col-->
+        <div class="col">
+          <input class="form-control form-control-lg form-control-borderless"  type="text" 
+          class="input" placeholder="Search By Name" name="name">  
+        <!--end of col-->
+        </div>
+        <div class="col">
+          <input class="form-control form-control-lg form-control-borderless"  type="text" 
+          class="input" placeholder="Search By Organization" name="currently_employed_organization">
+        </div>
+        <!--end of col-->
+    </div>
+
+    <div class="card-body form-row no-gutters align-items-center">
+      <div class="col-auto">
+          <i class="fas fa-search h4 text-body"></i>
       </div>
-  </form>
+      <!--end of col-->
+      <div class="col">
+        <input class="form-control form-control-lg form-control-borderless"  type="text" 
+        class="input" placeholder="Search By University" name="university">  
+      <!--end of col-->
+      </div>
+      <div class="col">
+        <input class="form-control form-control-lg form-control-borderless"  type="text" 
+        class="input" placeholder="Search By Country" name="country">
+      </div>
+      <!--end of col-->
+    </div>
+
+    <div class="col-auto d-flex justify-content-center">
+      <button class="btn btn-lg btn-primary btn-custom" type="submit">Search</button>
+  </div>
+</form>
 
 
     <!-- <form method="get">
@@ -28,8 +73,6 @@
         <input type="Submit" />
     </form> -->
     <br>
-
-    
         {% for student in students %}
         <article class="media content-section">
           {% if student.recent_passport_size_photo %}

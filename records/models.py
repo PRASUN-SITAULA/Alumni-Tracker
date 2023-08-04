@@ -231,7 +231,6 @@ class Student(models.Model):
     #     super().save(*args, *kwargs)
     #     print("File saved at " + self.file.path)
 
-
 class Address(models.Model):
     class Meta:
         constraints = [
