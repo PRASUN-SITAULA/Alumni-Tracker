@@ -13,7 +13,10 @@ class StudentFilter(django_filters.FilterSet):
     batch = django_filters.CharFilter(method='check_batch', label='batch/year')
     program = django_filters.CharFilter(method='check_program', label='program code')
     level = django_filters.CharFilter(method='check_level',label='level')#, choices=PROGRAM_LEVEL_CHOICES)
-    country = django_filters.CharFilter(method='check_country',label='country')
+    country = django_filters.CharFilter(method='check_country',label='country',widget=forms.TextInput(attrs={
+        'type':'text',
+        'class':'input'
+        }))
     name = django_filters.CharFilter(method='check_name',label='Name',widget=forms.TextInput(attrs={
         'type':'text',
         'class':'input'
@@ -22,7 +25,11 @@ class StudentFilter(django_filters.FilterSet):
         'type':'text',
         'class':'input'
         }))
-    university = django_filters.CharFilter(method='check_university', label="institution",lookup_expr='icontains')
+    university = django_filters.CharFilter(method='check_university', label="institution",
+                                           lookup_expr='icontains',widget=forms.TextInput(attrs={
+        'type':'text',
+        'class':'input'
+        }))
 
     def check_batch(self, queryset, name, value):
         #raise ValidationError(list(queryset.filter( Q(be_batch_bs=value)|Q(msc_batch_bs=value)|Q(phd_batch_bs=value) )))
