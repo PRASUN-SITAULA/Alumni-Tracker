@@ -44,9 +44,7 @@
   }
 
   .yearbook-container{
-    border-radius: 10px;
-    padding: 1.125rem;
-    background-color: rgb(221, 254, 248);
+  ;
   }
 
 </style>
@@ -111,11 +109,11 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgba(15, 4, 100) 0%, r
 <!--/.Navbar-->
 
     </header>
-<body style="background-color: rgb(235, 235, 249);">
+<body>
     <main role="main" class="container-fluid mt-100" style="font-size:15px;" >
       <div class="row justify-content-center align-self-center mt-120" style=" margin-top:100px; border-radius: 10px; ">
         {% block content_left %}{% endblock %}
-        <div class="col-md-8 yearbook-container"><!--div class="col-md-auto"></div-->
+        <div class="col-md-8"><!--div class="col-md-auto"></div-->
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
