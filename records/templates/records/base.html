@@ -27,21 +27,27 @@
 
         <!--Navbar-->
 <style>
-.link-hover{
-margin: 5px; 
+  .link-hover{
+  margin: 5px; 
 
-padding: 10px; 
-color:white; 
-cursor: pointer;
-font-style: normal; 
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-font-size: 20px;
-}
+  padding: 10px; 
+  color:white; 
+  cursor: pointer;
+  font-style: normal; 
+  font: Lato;
+  font-size: 20px;
+  }
 
-.link-hover:hover{
-  color: aquamarine;
-  transition: all 300ms ease-in-out;
-}
+  .link-hover:hover{
+    color: aquamarine;
+    transition: all 300ms ease-in-out;
+  }
+
+  .yearbook-container{
+    border-radius: 10px;
+    padding: 1.125rem;
+    background-color: rgb(221, 254, 248);
+  }
 
 </style>
 
@@ -58,7 +64,7 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgba(15, 4, 100) 0%, r
     </ul>
 
   <!-- Navbar brand -->
-  <a class="navbar-brand ml-3 float-left" href="{% url 'record-home' %}"> DOECE Alumni Portal </a>
+  <a class="navbar-brand ml-3 float-left" href="{% url 'record-home' %}"> <b>Department of Electronics and Computer Engineering</b><br>Alumni Portal </a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
@@ -109,7 +115,7 @@ style="background: radial-gradient(circle at 14.2% 27.5%, rgba(15, 4, 100) 0%, r
     <main role="main" class="container-fluid mt-100" style="font-size:15px;" >
       <div class="row justify-content-center align-self-center mt-120" style=" margin-top:100px; border-radius: 10px; ">
         {% block content_left %}{% endblock %}
-        <div class="col-md-8 "><!--div class="col-md-auto"></div-->
+        <div class="col-md-8 yearbook-container"><!--div class="col-md-auto"></div-->
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
