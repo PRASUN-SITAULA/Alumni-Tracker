@@ -33,6 +33,11 @@ def jptei(request,batch_bs):
 # Create your views here.
 
 def record_home(request):
+
+    # get_someone = Student.objects.filter(be_batch_bs='2056',be_program='BCT').order_by('be_roll_number')
+    # for student in get_someone:
+    #     student.recent_passport_size_photo = f'documents_photos/056bct{student.be_roll_number}.jpg'
+    #     student.save()
     context = {}
     # return render(request, 'records/base.html', context)
     if request.method == "POST":
@@ -50,6 +55,7 @@ def record_home(request):
     context = {
         'form': form,
     }
+    
     return render(request, 'records/home.html', context)
 
 
@@ -444,3 +450,5 @@ def get_student_object(kwargs,queryset=None, dob_bs=None):
     else:
         raise Http404("No Alumni matches the given query.")
     return ret_object
+
+   
