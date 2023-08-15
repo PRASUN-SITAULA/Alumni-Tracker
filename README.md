@@ -1,6 +1,13 @@
 # DOECE Alumni Portal
 A project for Department Of Electronics and Computer Engineering (DOECE), Pulchowk Campus!!!
 
+
+### Followed by:<br>
+- Nayan Pandey    077bct049<br>
+- Nirmal Rana     077bct051<br>
+- Prasun Sitaula  077bct057<br>
+- Rajesh Adhikari 077bct065<br>
+
 ### A Software Engineering project by:<br>
 - Jiwan Prasad Guragain 075bct041<br>
 - Yaman Subedi          075bct045<br>
