@@ -30,6 +30,7 @@ DEBUG = os.environ.get('DEBUG')
 ALLOWED_HOSTS = [
     'manaslu.pcampus.edu.np',
     '127.0.0.1',
+    '*'
 ]
 
 
@@ -163,11 +164,11 @@ DBBACKUP_STORAGE_OPTIONS = {'location': BASE_DIR +'/'+ 'backup'}     #'/home/bob
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('NAME'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': os.environ.get('HOST'),
-        'PORT': os.environ.get('PORT'),
+        'NAME': os.environ.get('POSTGRES_DB'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
