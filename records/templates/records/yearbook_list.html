@@ -1,10 +1,6 @@
 {% extends "records/base.html" %}
 {% load static %}
 {% block content_yearbook %}
-    <h2 class="mb-3 mt-10"><b>Yearbook {{ view.kwargs.program_code }} Batch {{ view.kwargs.batch_bs }}</b></h2>
-
-    Is your data incomplete or incorrect? You can update your info <a href="{% url 'alumni-login' %}">here</a><br><br>
-
 
 <style>
   .card{
@@ -22,11 +18,22 @@
 
   .form-control{
     border-bottom: 2px solid rgb(255, 162, 0);
-    
   }
+
+  .yearbook-section{
+    background-color: #cbdff3;
+    border-radius: 10px;
+  }
+
+
 </style>
 
+    <h2 class="mb-3 mt-10"><b>Yearbook {{ view.kwargs.program_code }} Batch {{ view.kwargs.batch_bs }}</b></h2>
 
+    Is your data incomplete or incorrect? You can update your info <a href="{% url 'alumni-login' %}">here</a><br><br>
+
+
+<!-- Search Form -->
 <form class="card card-sm" method="get">
     <div class="card-body form-row no-gutters align-items-center mt-10">
         <div class="col-auto">
@@ -64,7 +71,7 @@
 
     <div class="col-auto d-flex justify-content-center">
       <button class="btn btn-lg btn-primary btn-custom" type="submit">Search</button>
-  </div>
+    </div>
 </form>
 
 
@@ -74,7 +81,7 @@
     </form> -->
     <br>
         {% for student in students %}
-        <article class="media content-section">
+        <article class="media content-section yearbook-section">
           {% if student.recent_passport_size_photo %}
               <div class="float-left article-img">
                   <img style="height: 100%; transform: translateX(-50%);margin-left: 50%;" class="rounded-circle" src="{{ student.recent_passport_size_photo.url }}">
