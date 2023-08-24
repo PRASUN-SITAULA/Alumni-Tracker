@@ -38,8 +38,9 @@ A project for Department Of Electronics and Computer Engineering (DOECE), Pulcho
 ![ERD drawio](https://user-images.githubusercontent.com/61639823/210230921-2295b825-137b-4736-96dd-c3688e510100.png)
 
 ### Some screenshots of the web pages:
-![image](https://user-images.githubusercontent.com/61639823/210233673-37f0ace4-a695-4b6d-b593-5a686ba42ae2.png)
-![image](https://user-images.githubusercontent.com/61639823/210233508-eac95641-691e-49e3-9c89-8e79db4d7c56.png)
+<img width="948" alt="Screenshot 2023-08-24 154242" src="https://github.com/PRASUN-SITAULA/Alumni-Tracker/assets/89672957/f984dbb3-f5e1-4b4c-967a-a757d504e6b1">
+<img width="941" alt="Screenshot 2023-08-24 154310" src="https://github.com/PRASUN-SITAULA/Alumni-Tracker/assets/89672957/db4f249f-3462-49c7-9758-2e85aba8944d">
+<img width="951" alt="Screenshot 2023-08-24 154332" src="https://github.com/PRASUN-SITAULA/Alumni-Tracker/assets/89672957/4ca40d5f-fc26-4c38-9181-2845ab35e9a1">
 
 
 -----------------------------------------------------------------------------------------------------------------------
