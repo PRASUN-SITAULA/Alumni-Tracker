@@ -13,7 +13,7 @@ backup/
 *.pyc
 __pycache__/
 local_settings.py
-media
+
 
 ### database backup ###
 dbbackup
