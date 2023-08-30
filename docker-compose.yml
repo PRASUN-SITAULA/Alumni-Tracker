@@ -14,21 +14,21 @@ services:
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
-    command: gunicorn DOECEAlumniStudent.wsgi:application --bind 0.0.0.0:8000 
+      - "7071:7071"
+    command: gunicorn DOECEAlumniStudent.wsgi:application --bind 0.0.0.0:7071 
     env_file:
       - .env
-    depends_on:
-      - db
-  db:
-    image: postgres
-    container_name: "postgres_container"
-    ports:
-      - 5432:5432
-    volumes:
-     - ./backup/last_backup.sql:/docker-entrypoint-initdb.d/last_backup.sql
+    # depends_on:
+    #   - db
+  # db:
+  #   image: postgres
+  #   container_name: "postgres_container"
+  #   ports:
+  #     - 5432:5432
+  #   volumes:
+  #    - ./backup/last_backup.sql:/docker-entrypoint-initdb.d/last_backup.sql
       
-    environment:
-      POSTGRES_DB: doecealumnistudent
-      POSTGRES_USER: doecealumnistudentuser
-      POSTGRES_PASSWORD: password
+  #   environment:
+  #     POSTGRES_DB: doecealumnistudent
+  #     POSTGRES_USER: doecealumnistudentuser
+  #     POSTGRES_PASSWORD: password

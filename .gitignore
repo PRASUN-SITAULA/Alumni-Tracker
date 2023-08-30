@@ -2,9 +2,8 @@
 # Edit at https://www.gitignore.io/?templates=django,pycharm
 
 
-
+# backup data in json format
 data.json
-#media folder
 
 
 #backup folder
@@ -227,7 +226,10 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-# End of https://www.gitignore.io/api/django,pycharm
 
 data/db
 photos.py
+
+
+# End of https://www.gitignore.io/api/django,pycharm
+
