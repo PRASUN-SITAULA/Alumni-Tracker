@@ -9,9 +9,11 @@ A project for Department Of Electronics and Computer Engineering (DOECE), Pulcho
 - Rajesh Adhikari 077bct065<br>
 
 
-### Previous Features:<br>
+### Added Features:<br>
 - UI redesign
 - Filter student on the basis of country, employed organization and university
+
+
 ### A Software Engineering project by:<br>
 - Jiwan Prasad Guragain 075bct041<br>
 - Yaman Subedi          075bct045<br>
